@@ -38,7 +38,7 @@ int main(void)
    //printf("selected & retuned words >%s<\n", myword) ;
    currentCorrect[strlen(myword)] = 0 ;
    //printf("selected word : %s\n", myword) ;
-   printf("-------------------------------------\nB311030 ±è¼¼ÈÆÀÇ Hangman ÀÔ´Ï´Ù\n %d¹ø ÀÔ·ÂÇÒ ±âÈ¸°¡ ³²¾Ò½À´Ï´Ù. \n ¸ÂÃçº¸¼¼¿ä~~!\n-------------------------------------\n", 
+   printf("-------------------------------------\nB311030 ê¹€ì„¸í›ˆì˜ Hangman ì…ë‹ˆë‹¤\n %dë²ˆ ì…ë ¥í•  ê¸°íšŒê°€ ë‚¨ì•˜ìŠµë‹ˆë‹¤. \n ë§ì¶°ë³´ì„¸ìš”~~!\n-------------------------------------\n", 
          chance) ;
    while ( chance > 0 && fin == 0 )
    {
@@ -49,24 +49,24 @@ int main(void)
   //in[0]=ch;
 	   if (ch=='\n')
          continue ;
-    printf("\n %c ¸¦ ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù \n", ch) ;
+    printf("\n %c ë¥¼ ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤ \n", ch) ;
    //alreadyGuessed[i]=ch;
    //i++;
    if ( 1==checkAlreadyGuessed(alreadyGuessed, ch))
-    printf("ÀÌ¹Ì ÀÔ·ÂÇÏ½Å ´Ü¾îÀÔ´Ï´Ù ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä\n");
+    printf("ì´ë¯¸ ì…ë ¥í•˜ì‹  ë‹¨ì–´ì…ë‹ˆë‹¤ ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”\n");
    else
    {
 	   if (1!=checkCorrect(myword, ch))
 	   {
 		chance-- ;
-		printf("¶¯! ±âÈ¸¸¦ ÀÒÀ¸¼Ì½À´Ï´Ù. %d ¹ø ±âÈ¸ ³²À¸¼Ì½À´Ï´Ù\n", chance);
-		printf("Áö±İ±îÁö ¸ÂÃß½Å °Í : %s ÀÔ´Ï´Ù\n", currentCorrect) ; 
+		printf("ë•¡! ê¸°íšŒë¥¼ ìƒìœ¼ì…¨ìŠµë‹ˆë‹¤. %d ë²ˆ ê¸°íšŒ ë‚¨ìœ¼ì…¨ìŠµë‹ˆë‹¤\n", chance);
+		printf("ì§€ê¸ˆê¹Œì§€ ë§ì¶”ì‹  ê²ƒ : %s ì…ë‹ˆë‹¤\n", currentCorrect) ; 
 	   }
 	   else
 	   {
 		   enteredCorrect(myword,currentCorrect,ch);
-		   printf("%d ¹ø ±âÈ¸ ³²À¸¼Ì½À´Ï´Ù\n", chance) ;
-		   printf("Áö±İ±îÁö ¸ÂÃß½Å °Ç %s ÀÔ´Ï´Ù\n", currentCorrect) ; 
+		   printf("%d ë²ˆ ê¸°íšŒ ë‚¨ìœ¼ì…¨ìŠµë‹ˆë‹¤\n", chance) ;
+		   printf("ì§€ê¸ˆê¹Œì§€ ë§ì¶”ì‹  ê±´ %s ì…ë‹ˆë‹¤\n", currentCorrect) ; 
 	   }
    }
 
@@ -82,11 +82,11 @@ int main(void)
 	   
 	   if (k==0)
 		{
-				printf("\n¼º°ø!! ÃàÇÏÇÕ´Ï´Ù\n") ;
+				printf("\nì„±ê³µ!! ì¶•í•˜í•©ë‹ˆë‹¤\n") ;
 		}
 		else if(chance==0)
 		{
-			printf("½ÇÆĞ.. ´Ù½ÃµµÀüÇØº¸¼¼¿ä\n Á¤´äÀº %s ¿´½À´Ï´Ù.",myword) ;
+			printf("ì‹¤íŒ¨.. ë‹¤ì‹œë„ì „í•´ë³´ì„¸ìš”\n ì •ë‹µì€ %s ì˜€ìŠµë‹ˆë‹¤.",myword) ;
 		}
       /* fill the following */
       fflush(stdout);
@@ -137,6 +137,7 @@ int checkAlreadyGuessed(char *alreadyGuessed, char ch)
  if(num==2) return 1;
  return 0;
 }
+
 int enteredCorrect(char *myword, char *currentCorrect, char ch) 
 {
 	int a;
@@ -154,7 +155,7 @@ int word(char *string)
    int i, fi, nthWord ;
    fp = fopen("words.txt", "r") ;
    if ( fp == 0 ) {
-    fprintf(stderr, "words.txt ¾øÀ½.\n") ;
+    fprintf(stderr, "words.txt ì—†ìŒ.\n") ;
     strcpy(string, "") ;
     return 0 ;
    }
